@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
     private EditText mEditText;
     private TextView mArticle_text;
     private String oldText;
-    private String newText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,19 +27,17 @@ public class MainActivity extends AppCompatActivity {
         mCommentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mEditText.setVisibility(v.VISIBLE);
-//                oldText = mArticle_text.getText().toString();
-//                mArticle_text.setText(oldText + "\n" + "\n" + "New comment: " + mEditText.getText().toString());
-                addComment();
-//                mEditText.setVisibility(v.INVISIBLE);
+                addComment(v);
             }
         });
 
 
     }
 
-    private void addComment() {
+    private void addComment(View v) {
+        mEditText.setVisibility(v.VISIBLE);
         oldText = mArticle_text.getText().toString();
         mArticle_text.setText(oldText + "\n" + "\n" + "New comment: " + mEditText.getText().toString());
+
     }
 }
