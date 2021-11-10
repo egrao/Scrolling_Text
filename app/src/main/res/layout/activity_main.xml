@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -16,6 +17,18 @@
         android:textAppearance="@android:style/TextAppearance.Large"
         android:textColor="@android:color/white"
         android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/article_heading">
+
+        <TextView
+            android:id="@+id/article_subheading"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_regular"
+            android:text="@string/article_subtitle"
+            android:textAppearance="@android:style/TextAppearance" />
 
 
     <ScrollView
@@ -30,20 +43,12 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/article_subheading"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/padding_regular"
-                android:text="@string/article_subtitle"
-                android:textAppearance="@android:style/TextAppearance" />
-
-            <TextView
                 android:id="@+id/article"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:autoLink="web"
                 android:lineSpacingExtra="@dimen/line_spacing"
-                android:text="@string/article_text" />
+                android:text="@string/article_text"/>
 
             <EditText
                 android:id="@+id/edit_comment"
@@ -51,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Comment"
                 android:enabled="true"
-                android:visibility="invisible"/>
+                android:visibility="invisible" />
 
             <Button
                 android:id="@+id/comment_button"
@@ -59,8 +64,14 @@
                 android:layout_height="wrap_content"
                 android:text="@string/button_comment" />
 
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/chino" />
+
         </LinearLayout>
     </ScrollView>
-
+    </LinearLayout>
 
 </RelativeLayout>
